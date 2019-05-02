@@ -1,12 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>react-snakes</title>
+    <meta charset="UTF-8">
+    <title>Snakes and Ladders Mashup</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
 </head>
-</head>
-<body style="height: calc(100%); margin: 0; padding: 0">
-  <div id="snakes"></div>
-  <script src="/build/bundle.js"></script>
+
+<body>
+    <section class="sal-game">
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="player">
+                <img class="player1" src="img/player1.png" alt="pikachu"/>
+            </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+                <img class="BTFront" src="img/black.jpg" alt="black" />
+                <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+            </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+        <div class="tiles">
+            <img class="BTFront" src="img/black.jpg" alt="black" />
+            <img class="BTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+        <div class="tiles">
+            <img class="WTFront" src="img/white.jpg" alt="white" />
+            <img class="WTBack" src="img/yellow.jpg" alt="yellow" />
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <script src="scripts.js">
+    </script>
 </body>
+
 </html>

@@ -12,8 +12,9 @@ class game
         }
     }
 
-    movePlayer(playerIndex, tileNum)
+    movePlayer(playerIndex, numSpaces)
     {
+        const tileNum = parseInt(numSpaces);
         if (this.playerPositions[playerIndex] + tileNum < 100) {
             this.playerPositions[playerIndex] += tileNum;
         }

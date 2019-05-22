@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Rect, Group, Text } from "react-konva";
+import Player from "./Players"
 
-let WIDTH = 25;
+let WIDTH = 50;
 
 class Tile extends Component {
   constructor(props) {
@@ -13,16 +14,29 @@ class Tile extends Component {
   }
 
   render() {
+    const iseven = this.props.index % 2 === 0
+    const isPlayer1Here = this.props.gameState.playerPositions[0] === this.props.index;
+    const isPlayer2Here = this.props.gameState.playerPositions[1] === this.props.index;
+
     return (
       <Group key={this.props.index}>
         <Rect
-          x={0}
-          y={0}
+          x={this.props.x}
+          y={this.props.y}
           width={WIDTH}
           height={WIDTH}
-          fill={this.props.index % 2 === 0 ? "white" : "black"}
+          stroke = "black"
+          fill={ iseven ? "white" : "black"}
+          onClick = {() => console.log(this.state.val)}
         />
-        <Text x={0} y={0} text={this.props.index} />
+
+        {isPlayer1Here ? (
+          <Player color="red" x={this.props.x + 10}  y={this.props.y + 10}  />
+        ): <Text x={this.props.x} y={this.props.y} text={this.props.index} fill = {iseven? "black" : "white"} />}
+        {isPlayer2Here ? (
+          <Player color="blue" x={this.props.x + 30} y={this.props.y + 30} />
+        ): <Text x={this.props.x} y={this.props.y} text={this.props.index} fill = {iseven? "black" : "white"} />}
+        
       </Group>
     );
   }

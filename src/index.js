@@ -2,15 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Board from "./board";
 import Game from "./game";
+import {Stage} from 'react-konva';
 
 import "./styles.css";
 
 function App() {
   const game = new Game(2);
   return (
-    <div className="App">
+    <Stage height = {500} width = {500}>
       <Board gameState={game} />
-    </div>
+    </Stage>
   );
 }
 

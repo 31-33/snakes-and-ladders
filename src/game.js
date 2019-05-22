@@ -5,7 +5,7 @@ export default class Game {
     this.ladders = [];
     this.playerPositions = [];
     for (var i = 0; i < numPlayers; i++) {
-      this.playerPositions.push(2);
+      this.playerPositions.push(1);
     }
   }
 

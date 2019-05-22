@@ -30,10 +30,10 @@ class Tile extends Component {
                 onClick={() => this.props.onClickCallback(this.props.index, this.state.val)} />
 
         {isPlayer1Here ? (
-          <Player color="red" x={this.props.x + 20}  y={this.props.y + 20}  />
+                <Player color="red" x={this.props.x + 20} y={this.props.y + 20} gameState={this.props.gameState} playerIndex={0} />
         ): <Text x={this.props.x + 3} y={this.props.y +3} text={this.props.index} fontSize={20} fill = {iseven? "black" : "white"} />}
-        {isPlayer2Here ? (
-          <Player color="blue" x={this.props.x + 20} y={this.props.y + 70} />
+            {isPlayer2Here ? (
+                <Player color="blue" x={this.props.x + 20} y={this.props.y + 70} gameState={this.props.gameState} playerIndex={1} />
         ): <Text x={this.props.x + 3} y={this.props.y + 3} text={this.props.index} fontSize={20} fill = {iseven? "black" : "white"} />}
         
       </Group>

@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import { Rect, Group, Text, Layer } from "react-konva";
 import Tile from "./tile.js";
 import WIDTH from "./tile";
+import Game from './game';
 
 export default class Board extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            firstTile: '', secondTile: ''
+            firstTile: '',
+            secondTile: '',
+            gameState: new Game(2),
         }
     }
 
@@ -26,7 +29,15 @@ export default class Board extends Component {
                     index: tileIndex,
                     value: tileValue
                 }
-            })
+            });
+            setTimeout(() => {
+                if (this.state.firstTile.value === this.state.secondTile.value) {
+                    this.state.gameState.movePlayer(this.state.gameState.activePlayerIndex, this.state.firstTile.value);
+
+                    console.log('match')
+                }
+                this.setState({firstTile: '', secondTile: ''})
+            }, 3000);
         }
         console.log(this.state);
     }
@@ -65,7 +76,7 @@ export default class Board extends Component {
                 const isRevealed =
                     (this.state.firstTile !== '' && this.state.firstTile.index === tile.index) ||
                     (this.state.secondTile !== '' && this.state.secondTile.index === tile.index)
-                return <Tile index={tile.index} key={tile.index} x={tile.x} y={tile.y} gameState={this.props.gameState}
+                return <Tile index={tile.index} key={tile.index} x={tile.x} y={tile.y} gameState={this.state.gameState}
                     onClickCallback={this.onTileClick} isRevealed={isRevealed} />;
         })}
       </Layer>

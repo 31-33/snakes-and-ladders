@@ -4,6 +4,7 @@ export default class Game {
     this.snakes = [];
     this.ladders = [];
     this.playerPositions = [];
+      this.activePlayerIndex = 0;
     for (var i = 0; i < numPlayers; i++) {
       this.playerPositions.push(1);
     }

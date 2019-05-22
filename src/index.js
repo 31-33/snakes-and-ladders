@@ -10,15 +10,12 @@ export default class App extends React.Component {
     constructor() {
         super();
 
-        this.state = {
-            gameState: new Game(2),
-        }
     }
 
     render() {
         return (
             <Stage height={900} width={900}>
-                <Board gameState={this.state.gameState} />
+                <Board />
             </Stage>
         );
     }

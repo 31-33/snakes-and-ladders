@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Rect, Group, Text } from "react-konva";
 import Player from "./Players"
 
-let WIDTH = 50;
+export const WIDTH = 90;
 
 class Tile extends Component {
   constructor(props) {
@@ -27,15 +27,15 @@ class Tile extends Component {
           height={WIDTH}
           stroke = "black"
           fill={ iseven ? "white" : "black"}
-          onClick = {() => console.log(this.state.val)}
+          onClick = {() => console.log(this.state.val)  }
         />
 
         {isPlayer1Here ? (
-          <Player color="red" x={this.props.x + 10}  y={this.props.y + 10}  />
-        ): <Text x={this.props.x} y={this.props.y} text={this.props.index} fill = {iseven? "black" : "white"} />}
+          <Player color="red" x={this.props.x + 20}  y={this.props.y + 20}  />
+        ): <Text x={this.props.x + 3} y={this.props.y +3} text={this.props.index} fontSize={20} fill = {iseven? "black" : "white"} />}
         {isPlayer2Here ? (
-          <Player color="blue" x={this.props.x + 30} y={this.props.y + 30} />
-        ): <Text x={this.props.x} y={this.props.y} text={this.props.index} fill = {iseven? "black" : "white"} />}
+          <Player color="blue" x={this.props.x + 20} y={this.props.y + 70} />
+        ): <Text x={this.props.x + 3} y={this.props.y + 3} text={this.props.index} fontSize={20} fill = {iseven? "black" : "white"} />}
         
       </Group>
     );

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Rect, Group, Text, Layer } from "react-konva";
 import Tile from "./tile.js";
+import WIDTH from "./tile";
 
 export default class Board extends Component {
   render() {
@@ -16,7 +17,7 @@ export default class Board extends Component {
             x: x,
             y: y,
           });
-          x += 50;
+          x += 90;
         }
       } else {
         for (var column = 1; column <= 10; column++) {
@@ -25,11 +26,11 @@ export default class Board extends Component {
             x: x,
             y: y,
           });
-          x += 50;
+          x += 90;
         }
       }
       x = 0;
-      y += 50;
+      y += 90;
     }
     return (
       <Layer>

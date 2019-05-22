@@ -1,16 +1,13 @@
-class game
-{
-    constructor(numPlayers)
-    {
-        this.winner = -1;
-        this.snakes = [];
-        this.ladders = [];
-        this.playerPositions = [];
-        for (var i = 0; i < numPlayers; i++)
-        {
-            this.playerPositions.push(0);
-        }
+class game {
+  constructor(numPlayers) {
+    this.winner = -1;
+    this.snakes = [];
+    this.ladders = [];
+    this.playerPositions = [];
+    for (var i = 0; i < numPlayers; i++) {
+      this.playerPositions.push(0);
     }
+  }
 
     movePlayer(playerIndex, numSpaces)
     {
@@ -34,19 +31,17 @@ class game
         })
     }
 
-    makeSnake(startPos, endPos)
-    {
-        this.snakes.push({
-            start: startPos,
-            end: endPos
-        });
-    }
+  makeSnake(startPos, endPos) {
+    this.snakes.push({
+      start: startPos,
+      end: endPos
+    });
+  }
 
-    makeLadder(startPos, endPos)
-    {
-        this.ladders.push({
-            start: startPos,
-            end: endPos
-        });
-    }
+  makeLadder(startPos, endPos) {
+    this.ladders.push({
+      start: startPos,
+      end: endPos
+    });
+  }
 }

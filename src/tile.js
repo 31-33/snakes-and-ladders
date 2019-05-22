@@ -21,14 +21,13 @@ class Tile extends Component {
     return (
       <Group key={this.props.index}>
         <Rect
-          x={this.props.x}
-          y={this.props.y}
-          width={WIDTH}
-          height={WIDTH}
-          stroke = "black"
-          fill={ iseven ? "white" : "black"}
-          onClick = {() => console.log(this.state.val)  }
-        />
+                x={this.props.x}
+                y={this.props.y}
+                width={WIDTH}
+                height={WIDTH}
+                stroke="black"
+                fill={iseven ? "white" : "black"}
+                onClick={() => this.props.onClickCallback(this.props.index, this.state.val)} />
 
         {isPlayer1Here ? (
           <Player color="red" x={this.props.x + 20}  y={this.props.y + 20}  />

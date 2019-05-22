@@ -6,13 +6,22 @@ import {Stage} from 'react-konva';
 import WIDTH from "./tile";
 import "./styles.css";
 
-function App() {
-  const game = new Game(2);
-  return (
-    <Stage height = {900} width = {900}>
-      <Board gameState={game} />
-    </Stage>
-  );
+export default class App extends React.Component {
+    constructor() {
+        super();
+
+        this.state = {
+            gameState: new Game(2),
+        }
+    }
+
+    render() {
+        return (
+            <Stage height={900} width={900}>
+                <Board gameState={this.state.gameState} />
+            </Stage>
+        );
+    }
 }
 
 

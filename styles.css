@@ -1,0 +1,24 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  .tiles{
+    width:calc(10%);
+    height:calc(10%- 10px);
+    margin: 0px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s
+  }
+
+  .tiles.flip{
+    transform: rotateY(180deg);
+  }

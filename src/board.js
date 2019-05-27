@@ -5,7 +5,11 @@ import WIDTH from "./tile";
 import Game from './game';
 import Konva from "konva";
 
+
 export default class Board extends Component {
+
+  
+  
     constructor(props) {
         super(props);
         this.state = {
@@ -15,11 +19,12 @@ export default class Board extends Component {
         }
     }
 
-    onTileClick = (tileIndex, tileValue, isRevealed) => {
-        
+    onTileClick = (tileIndex, tileValue) => {
 
+
+      
         if (this.state.firstTile === '') {
-          
+
             this.setState({
                
                 firstTile: {
@@ -43,13 +48,17 @@ export default class Board extends Component {
             setTimeout(() => {
                 if (this.state.firstTile.value === this.state.secondTile.value) {
                     this.state.gameState.movePlayer(this.state.gameState.activePlayerIndex, this.state.firstTile.value);
+                    var sound = document.getElementById("audio");
+                    sound.play();
+
 
 
 
                     console.log('match')
                 }
                 this.setState({firstTile: '', secondTile: ''})
-            }, 1000);
+            }, 1000
+            );
 
             if(this.state.gameState.activePlayerIndex == 1){
               this.state.gameState.activePlayerIndex = 0
@@ -57,6 +66,10 @@ export default class Board extends Component {
             else if(this.state.gameState.activePlayerIndex == 0)
             this.state.gameState.activePlayerIndex = 1
 
+
+            var sound = document.getElementById("urturn");
+            sound.play();
+            
 
 
         }
@@ -101,7 +114,7 @@ export default class Board extends Component {
       x = 0;
       y += 90;
     }
-    return (
+    return (    
       <Layer>
             {tiles.map(tile => {
                 const isRevealed =
@@ -111,7 +124,7 @@ export default class Board extends Component {
                     onClickCallback={this.onTileClick} isRevealed={isRevealed} />;
                     
         })}
-      </Layer>
+      </Layer>    
     );
   }
 }

@@ -2,6 +2,7 @@ import Konva from "konva";
 
 export default class Game {
   constructor(numPlayers) {
+    
     this.winner = -1;
     this.snakes = [];
     this.ladders = [];
@@ -13,6 +14,7 @@ export default class Game {
   }
 
   movePlayer(playerIndex, numSpaces) {
+    
     const tileNum = parseInt(numSpaces, 10);
     if (this.playerPositions[playerIndex] + tileNum < 100) {
       this.playerPositions[playerIndex] += tileNum;

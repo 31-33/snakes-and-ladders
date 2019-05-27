@@ -8,15 +8,20 @@ import "./styles.css";
 
 export default class App extends React.Component {
     constructor() {
+
         super();
+
 
     }
 
     render() {
         return (
+
             <Stage height={900} width={900}>
                 <Board />
             </Stage>
+            
+            
         );
     }
 }
@@ -25,4 +30,5 @@ export default class App extends React.Component {
 
 
 const rootElement = document.getElementById("root");
+
 ReactDOM.render(<App />, rootElement);

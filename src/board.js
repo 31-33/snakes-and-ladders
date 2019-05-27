@@ -3,6 +3,7 @@ import { Rect, Group, Text, Layer } from "react-konva";
 import Tile from "./tile.js";
 import WIDTH from "./tile";
 import Game from './game';
+import Konva from "konva";
 
 export default class Board extends Component {
     constructor(props) {
@@ -14,18 +15,27 @@ export default class Board extends Component {
         }
     }
 
-    onTileClick = (tileIndex, tileValue) => {
+    onTileClick = (tileIndex, tileValue, isRevealed) => {
+        
+
         if (this.state.firstTile === '') {
+          
             this.setState({
+               
                 firstTile: {
                     index: tileIndex,
-                    value: tileValue
+                    value: tileValue,
+
+                    
                 }
-            })
+            }
+            )
+            
         }
         else {
             this.setState({
                 secondTile: {
+                    
                     index: tileIndex,
                     value: tileValue
                 }
@@ -34,12 +44,33 @@ export default class Board extends Component {
                 if (this.state.firstTile.value === this.state.secondTile.value) {
                     this.state.gameState.movePlayer(this.state.gameState.activePlayerIndex, this.state.firstTile.value);
 
+
+
                     console.log('match')
                 }
                 this.setState({firstTile: '', secondTile: ''})
-            }, 3000);
+            }, 1000);
+
+            if(this.state.gameState.activePlayerIndex == 1){
+              this.state.gameState.activePlayerIndex = 0
+            }
+            else if(this.state.gameState.activePlayerIndex == 0)
+            this.state.gameState.activePlayerIndex = 1
+
+
+
         }
         console.log(this.state);
+
+
+    }
+
+  
+    makeLadder(startPos, endPos) {
+      this.ladders.push({
+        start: startPos,
+        end: endPos
+      });
     }
 
   render() {
@@ -78,6 +109,7 @@ export default class Board extends Component {
                     (this.state.secondTile !== '' && this.state.secondTile.index === tile.index)
                 return <Tile index={tile.index} key={tile.index} x={tile.x} y={tile.y} gameState={this.state.gameState}
                     onClickCallback={this.onTileClick} isRevealed={isRevealed} />;
+                    
         })}
       </Layer>
     );

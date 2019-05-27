@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Rect, Group, Text } from "react-konva";
 import Player from "./Players"
+import isRevealed from "./board"
+import { resolveTripleslashReference } from "typescript";
 
 export const WIDTH = 90;
 
@@ -27,7 +29,7 @@ class Tile extends Component {
                 height={WIDTH}
                 stroke="black"
                 fill={iseven ? "white" : "black"}
-                onClick={() => this.props.onClickCallback(this.props.index, this.state.val)} />
+                onClick={() => this.props.onClickCallback(this.props.index, this.state.val, this.state.isRevealed )} />
 
         {isPlayer1Here ? (
                 <Player color="red" x={this.props.x + 20} y={this.props.y + 20} gameState={this.props.gameState} playerIndex={0} />
@@ -35,9 +37,16 @@ class Tile extends Component {
             {isPlayer2Here ? (
                 <Player color="blue" x={this.props.x + 20} y={this.props.y + 70} gameState={this.props.gameState} playerIndex={1} />
         ): <Text x={this.props.x + 3} y={this.props.y + 3} text={this.props.index} fontSize={20} fill = {iseven? "black" : "white"} />}
+        {this.props.isRevealed? (
+          <Text x={this.props.x + 35} y={this.props.y + 35} text={String(this.state.val)} fontSize={40} fontStyle={"bold"} fill = {iseven? "blue" : "blue"} /> 
+        ): <Text x={this.props.x + 3} y={this.props.y + 3} text={this.props.index} fontSize={20} fill = {iseven? "black" : "white"} />}
+        
+
+       
         
       </Group>
     );
   }
 }
 export default Tile;
+

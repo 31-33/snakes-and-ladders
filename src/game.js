@@ -1,3 +1,5 @@
+import Konva from "konva";
+
 export default class Game {
   constructor(numPlayers) {
     this.winner = -1;
@@ -29,12 +31,7 @@ export default class Game {
     });
   }
 
-  makeSnake(startPos, endPos) {
-    this.snakes.push({
-      start: startPos,
-      end: endPos
-    });
-  }
+
 
   makeLadder(startPos, endPos) {
     this.ladders.push({

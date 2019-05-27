@@ -8,7 +8,7 @@ export default class Player extends React.Component {
 
     return (
         <Circle radius={15} x={this.props.x} y={this.props.y} fill={this.props.color}
-            stroke={this.props.gameState.activePlayerIndex === this.props.playerIndex ? "yellow": ''} />
+            stroke={this.props.gameState.activePlayerIndex === this.props.playerIndex ? '': 'yellow'} />
     )
   }
 }

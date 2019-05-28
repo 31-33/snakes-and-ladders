@@ -58,7 +58,15 @@ export default class Board extends Component {
 
                     this.state.gameState.inactive.push(this.state.firstTile.index);
                     this.state.gameState.inactive.push(this.state.secondTile.index);
-
+                    var sorl = Math.floor(Math.random()*10);
+                    if(sorl <2)
+                    {
+                    this.state.gameState.makeSnake(this.state.firstTile.index, this.state.secondTile.index);
+                    }
+                    else{
+                    this.state.gameState.makeLadder(this.state.firstTile.index, this.state.secondTile.index);
+                   }
+ 
 
 
 

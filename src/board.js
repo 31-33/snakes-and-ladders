@@ -63,7 +63,7 @@ export default class Board extends Component {
                     {
                     this.state.gameState.makeSnake(this.state.firstTile.index, this.state.secondTile.index);
                     }
-                    else{
+                    else if(sorl>7){
                     this.state.gameState.makeLadder(this.state.firstTile.index, this.state.secondTile.index);
                    }
  

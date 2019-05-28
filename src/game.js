@@ -43,12 +43,17 @@ export default class Game {
     this.snakes.forEach(snake => {
       if (snake.start === this.playerPositions[playerIndex]) {
         this.playerPositions[playerIndex] = snake.end;
+        var sound = document.getElementById("fall");
+        sound.play();
       }
     });
     this.ladders.forEach(ladder => {
       if (ladder.start === this.playerPositions[playerIndex]) {
         this.playerPositions[playerIndex] = ladder.end;
+        var sound = document.getElementById("rise");
+        sound.play();
       }
+      
     });
   }
 

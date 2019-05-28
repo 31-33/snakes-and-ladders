@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Rect, Group, Text, Layer } from "react-konva";
 import Tile from "./tile.js";
+import Snake from "./snakes";
+import Ladder from "./ladder";
 import WIDTH from "./tile";
 import Game from './game';
 import Konva from "konva";
@@ -101,7 +103,8 @@ export default class Board extends Component {
     }
 
   render() {
-
+    const snakess =[];
+    const ladderss =[];
     const tiles = [];
     var x = 0;
     var y = 0;
@@ -128,8 +131,10 @@ export default class Board extends Component {
       x = 0;
       y += 90;
     }
+    console.log(this.state.gameState);
     return (    
       <Layer>
+
             {tiles.map(tile => { 
                 const isRevealed =
                     (this.state.firstTile !== '' && this.state.firstTile.index === tile.index) ||
@@ -139,6 +144,22 @@ export default class Board extends Component {
                     onClickCallback={this.onTileClick} isRevealed={isRevealed} />;
                     
         })}
+        <Group>
+        {this.state.gameState.snakes.map(snake =>{
+                  const startTile = tiles.find(tile => tile.index === snake.start)
+                  const endTile = tiles.find(tile => tile.index === snake.end)
+
+                  return <Snake startX={startTile.x + 45} startY={startTile.y + 45} endX={endTile.x + 45} endY={endTile.y + 45}/>;
+
+        })}
+        {this.state.gameState.ladders.map(ladder=>{
+                  const startTile = tiles.find(tile => tile.index === ladder.start)
+                  const endTile = tiles.find(tile => tile.index === ladder.end) 
+
+                  return <Ladder startX={startTile.x + 45} startY={startTile.y + 45} endX={endTile.x + 45} endY={endTile.y + 45}/>;
+
+        })}
+          </Group>
       </Layer>    
     );
   }

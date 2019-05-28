@@ -1,30 +1,28 @@
 import React from 'react';
-import { Layer, Line, Circle } from 'react-konva';
-import { getPlayerCoordinates } from '../config/utils';
-import { styles } from '../styles';
+import { Layer, Line, Circle, Group } from 'react-konva';
+
 
 export default class Snake extends React.Component {
+    constructor(props) {
+        super(props);
+    
+      }
     render() {
-        const { snake: { startPos, endPos }, board } = this.props;
+      /*  const { snake: { startPos, endPos }, board } = this.props;
         const { x: startX, y: startY }; //methodTogetthenumber
         const { x: endX, y: endY }; //Method to get the player cordinates
-
+*/
         return (
-            <Layer>
+            <Group>
                 <Line
-                    points={[startX, startY, endX, endY]}
-                    stroke={styles.red}
+                    points={[this.props.startX, this.props.startY, this.props.endX, this.props.endY]}
+                    stroke="red"
                     lineCap="round"
-                    strokeWidth={4}
+                    strokeWidth={6}
                     dash={[1, 5]}
                 />
-                <Circle
-                    x={startX}
-                    y={startY}
-                    radius={5}
-                    fill={styles.red}
-                />
-            </Layer>
+
+            </Group>
         )
     }
 }

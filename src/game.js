@@ -5,8 +5,9 @@ export default class Game {
   constructor(numPlayers) {
     
     this.winner = -1;
-    this.snakes = [];
     this.ladders = [];
+    this.snakes = [];
+    this.makeSnake(90,2)
     this.inactive = [];
     this.playerPositions = [];
     this.activePlayerIndex = 0;
@@ -55,9 +56,18 @@ export default class Game {
 
 
   makeLadder(startPos, endPos) {
+    
     this.ladders.push({
-      start: startPos,
-      end: endPos
+      start: Math.min(startPos, endPos),
+      end: Math.max(startPos, endPos),
+    });
+  }
+
+  makeSnake(startPos, endPos) {
+
+    this.snakes.push({
+      start: Math.max(startPos, endPos),
+      end: Math.min(startPos, endPos)
     });
   }
 }

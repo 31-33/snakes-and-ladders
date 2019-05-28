@@ -7,7 +7,6 @@ export default class Game {
     this.winner = -1;
     this.ladders = [];
     this.snakes = [];
-    this.makeSnake(90,2)
     this.inactive = [];
     this.playerPositions = [];
     this.activePlayerIndex = 0;

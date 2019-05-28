@@ -4,21 +4,21 @@ import { styles } from '../styles';
 
 export default class Ladder extends React.Component {
     render() {
-        const { ladder: { startPos, endPos }, board } = this.props;
-        const { x: startX, y: startY } //getcoordinates for start
-        const { x: endx, y: endY }//getcoordinates for end
+        const { ladder: { startXPos, endXPos,startYPos, endYPos }, board } = this.props;
+        const { x: startXPos, y: startYPos } //getcoordinates for start
+        const { x: endXPos, y: endYPos }//getcoordinates for end
 
         return (
             <Layer>
                 <Line
-                    points={[startX, startY, endX, endY]}
+                    points={[startXPos, startYPos, endXPos, endYPos]}
                     stroke={styles.green}
                     linecap="round"
                     strokeWidth={5}
                     dash={[20, 5]}
                 />
                 <Line
-                    points={[startX - 6, startY, endX - 6, endY]}
+                    points={[startXPos - 6, startYPos, endXPos - 6, endYPos]}
                     stroke={styles.gray}
                     lineCap="round"
                     strokeWidth={2}

@@ -13,11 +13,13 @@ export default class Board extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            reset: 0,
             firstTile: '',
             secondTile: '',
             gameState: new Game(2),
         }
     }
+    
 
     onTileClick = (tileIndex, tileValue) => {
 
@@ -46,18 +48,29 @@ export default class Board extends Component {
                 }
             });
             setTimeout(() => {
+              //If they match
                 if (this.state.firstTile.value === this.state.secondTile.value) {
                     this.state.gameState.movePlayer(this.state.gameState.activePlayerIndex, this.state.firstTile.value);
                     var sound = document.getElementById("audio");
                     sound.play();
+
+                    this.state.gameState.inactive.push(this.state.firstTile.index);
+                    this.state.gameState.inactive.push(this.state.secondTile.index);
+
+
 
 
 
 
                     console.log('match')
                 }
+                
+
+                
                 this.setState({firstTile: '', secondTile: ''})
+                
             }, 1000
+            
             );
 
             if(this.state.gameState.activePlayerIndex == 1){
@@ -69,20 +82,21 @@ export default class Board extends Component {
 
             var sound = document.getElementById("urturn");
             sound.play();
-            
+
 
 
         }
         console.log(this.state);
 
+        
+
 
     }
 
   
-    makeLadder(startPos, endPos) {
+    makeLadder(startXPos, endXPos, startYpos, endYpos) {
       this.ladders.push({
-        start: startPos,
-        end: endPos
+        start: startXPos,
       });
     }
 
@@ -116,10 +130,11 @@ export default class Board extends Component {
     }
     return (    
       <Layer>
-            {tiles.map(tile => {
+            {tiles.map(tile => { 
                 const isRevealed =
                     (this.state.firstTile !== '' && this.state.firstTile.index === tile.index) ||
                     (this.state.secondTile !== '' && this.state.secondTile.index === tile.index)
+
                 return <Tile index={tile.index} key={tile.index} x={tile.x} y={tile.y} gameState={this.state.gameState}
                     onClickCallback={this.onTileClick} isRevealed={isRevealed} />;
                     
